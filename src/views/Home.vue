@@ -1,6 +1,10 @@
 <template>
   <div class="home">
-    {{title}}
+    <div>{{title}}</div>
+    <div>{{changePeople}}</div>
+    <button @click="change">mutations点我</button>
+    <button @click="btnSync">actions点我</button>
+    <button @click="btnPromise">promise点我</button>
   </div>
 </template>
 
@@ -16,11 +20,21 @@ export default {
   computed:{
     title(){
         return this.$store.state.title
+    },
+    changePeople(){
+      return this.$store.getters.changePeople
     }
   },
-  methods:{
+  methods:{ 
       change(){
         this.$store.commit('getParam','hello')
+      },
+      btnSync(){
+        this.$store.dispatch('getParamSync','nb')
+      },
+      async btnPromise(){
+        const res= await this.$store.dispatch('getParamSync','pormise')
+        console.log(res)
       }
   }
 }
