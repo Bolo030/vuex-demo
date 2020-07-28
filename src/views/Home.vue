@@ -27,7 +27,8 @@ export default {
   },
   methods:{ 
       change(){
-        this.$store.commit('getParam','hello')
+        // this.$store.commit('getParam','hello')
+        this.$store.commit('user/getParam','helloB')
       },
       btnSync(){
         this.$store.dispatch('getParamSync','nb')
