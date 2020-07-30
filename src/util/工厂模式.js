@@ -4,9 +4,10 @@ class Product{
     }
     init(){
         console.log("init")
+        console.log(this.name)
     }
     fun(){
-        console.log(fun)
+        console.log("fun")
     }
 }
 
@@ -21,3 +22,4 @@ let factory=new Factory()
 let p=factory.create('p1')
 p.init()
 p.fun()
+
