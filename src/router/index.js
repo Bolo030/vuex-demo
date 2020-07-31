@@ -11,6 +11,11 @@ Vue.use(VueRouter)
     component: Home
   },
   {
+    path: '/flow',
+    name: 'Flow',
+    component: () => import(/* webpackChunkName: "about" */ '../views/grid-auto-flow.vue')
+  },
+  {
     path: '/about',
     name: 'About',
     // route level code-splitting
